@@ -7,7 +7,7 @@ function Header({ currentPage, setCurrentPage }) {
         <header>
             <a id="title-name" className={currentPage == 'Home' ? 'active-page': 'inactive-page'} title-name href='#'onClick={() => {
                 setCurrentPage('Home');
-            }}>Travel Manager</a>
+            }}>RSVP Radar</a>
             <Nav currentPage={currentPage} setCurrentPage={setCurrentPage}/>
         </header>
     );

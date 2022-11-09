@@ -30,7 +30,7 @@ function App() {
         <>
           <section className="hero">
             <div>
-              <h2>Travel Manager</h2>
+              <h2>RSVP Radar</h2>
             </div>
           </section>
         </>
