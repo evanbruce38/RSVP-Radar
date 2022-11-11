@@ -9,7 +9,33 @@ function Contact () {
     const [disabledButton, setDisabledButton] = useState(true);
     const { name, email, message } = formState;
 
-    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!errorMessage) {
+            setFormState({ [e.target.name]: e.target.value });
+        }
+    };
+
+    const handleChange = (e) => {
+        if (e.target.name === 'email') {
+            const isValid = validateEmail(e.target.value);
+            if (!isValid) {
+                setErrorMessage('Your email is invalid');
+                setDisabledButton(true);
+            } else {
+                setErrorMessage('');
+                setDisabledButton(false);
+            }
+        } else {
+            if (!e.target.value.length) {
+                setErrorMessage(`${e.target.name} is required.`);
+                setDisabledButton(true);
+            } else {
+                setErrorMessage('');
+                setDisabledButton(false);
+            }
+        }
+    };
 
     return (
         <section className="content">
@@ -37,9 +63,26 @@ function Contact () {
                         <label htmlFor="name">Name:</label>
                         <input type="text" name="name" defaultValue={name} onBlur={handleChange} />
                     </div>
-                    <div></div>
+                    <div>
+                        <label htmlFor="email">Email Address:</label>
+                        <input type="email" name="email" defaultValue={email} onBlur={handleChange} />
+                    </div>
+                    <div>
+                        <label htmlFor="message">Message:</label>
+                        <textarea name="text" rows="5" defaultValue={message} onBlur={handleChange} />
+                    </div>
+                    {errorMessage && (
+                        <div>
+                            <p className="error-text">{errorMessage}</p>
+                        </div>
+                    )}
+                    <div className='btn-div'>
+                        <button type="submit" disabled={disabledButton}>Submit</button>
+                    </div>
                 </form>
             </div>
         </section>
-    )
+    );
 }
+
+export default Contact;
