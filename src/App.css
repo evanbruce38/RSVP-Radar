@@ -1,38 +1,333 @@
-.App {
+:root {
+  --first-color: 
+  --second-color: 
+  --third-color: 
+  --fourth-color: 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+p {
+  color: var(--second-color)
+}
+
+header {
+  background-color: var(--first-color);
+  display: flex;
+  justify-content: space-between;
+}
+
+header nav {
+  display: flex;
+  /* width: 500px; */
+  background-color: var(--first-color);
+  justify-content: space-around;
+  align-items: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 28px;
+  margin-right: 55px;
+}
+
+header nav a {
+  margin: 20px;
+}
+
+nav a:hover {
+  color: var(--fourth-color);
+  text-decoration: none;
+}
+
+header h1:hover {
+  color: var(--second-color)
+}
+
+#title-name {
+  margin: 30px;
+  font-size: 55px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--fourth-color);
+  text-decoration: none;
+}
+
+#title-name:hover {
+  color: var(--fourth-color);
+  text-decoration: none;
+}
+
+main {
+  background-color: var(--first-color)
+}
+
+#about, #contact {
+  height: 600px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#about-title, #work-title, #contact-title {
+  padding: 40px;
   text-align: center;
+  font-size: 55px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  display: flex;
+  justify-content: center;
+  color: var(--fourth-color)
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.about-p {
+  color: var(--fourth-color);
+  line-height: 1.5;
+  font-family: sans-serif;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main-section-content {
+  width: 900px;
+  display: flex;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#work {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--first-color);
+  padding: 40px;
+}
+
+#work-imgs-container, #contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.contact-content, .contact-phone {
+  font-size: 25px;
+}
+
+#work-main-img {
+  width: 100%;
+}
+
+.big-box-1 {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  border: 8px solid var(--third-color);
+  margin-bottom: 50px;
+}
+
+.big-box-2 {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  border: 8px solid var(--third-color);
+}
+
+.pic-label {
+  height: 50px;
+  display: flex;
+  align-content: space-around;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 32px;
+  text-decoration-color: var(--second-color);
+}
+
+.pic-label button {
+  margin-top: 50px;
+}
+
+.half-box {
+  width: 435px;
+  height: 228px;
+  margin-top: 50px;
+  background-size: cover;
+  border: 8px solid var(--third-color);
+  display: flex;
+  align-items: flex-end;
+}
+
+.box {
+  position: relative;
+  width: 100%;
+}
+
+.box-title {
+  position: relative;
+  z-index: 10;
+  background-color: var(--second-color);
+  display: inline-block;
+  padding: 15px;
+  top: 40%;
+}
+
+.box-title-text {
+  color: var(--fourth-color);
+  font-size: 28px;
+  font-weight: 600;
+  font-style: italic;
+  display: inline-block;
+}
+
+.box-content {
+  position: relative;
+  height: 100%;
+}
+
+
+.column {
+  height: 75%;
+  background-color: var (--second-color);
+  width: 8px;
+}
+
+.footer-basic {
+  padding:40px 0;
+  background-color: var(--second-color);
+  color: var(--second-color)
+}
+
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+  color: var(--fourth-color)
+}
+
+.footer-basic li {
+  padding:0 10px;
+}
+
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity:1;
+  color: var(--third-color)
+}
+
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+  color: var(--fourth-color)
+}
+
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid var(--second-color);
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity:0.9;
+  color: var(--third-color);
+}
+
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color: var(--second-color);
+  margin-bottom:0;
+}
+
+.active-page {
+  color: var(--fourth-color);
+}
+
+.inactive-page {
+  color: var(--second-color);
+}
+
+.profs {
+  font-size: 55px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: var(--fourth-color);
+}
+
+.ul-container {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 24px;
+}
+
+.contact-container {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.contact-me-title {
+  font-size: 55px;
+}
+
+.profile-pic {
+  display: flex;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  justify-content: center;
+}
+
+.about-pic {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 980px) {
+  /* this will be applied to any screen smaller than 980px */
+  .half-box {
+      width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .click-container {
+      width: 100%;
+      height: 100%;
+  }
+
+  #about, #contact {
+      padding: 40px;
+      height: 100%;
+  }
+
+  .main-section-content {
+      width: 600px;
   }
 }
