@@ -36,22 +36,22 @@ const resolvers = {
 
             return { token, user };
         },
-        saveTrip: async (parent, { newTrip }, context) => {
+        saveHotel: async (parent, { newHotel }, context) => {
             if (context.user) {
                 const updatedUser = await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $push: { savedTrips: newTrip }},
+                    { $push: { savedHotels: newHotel }},
                     { new: true }
                 );
                 return updatedUser;
             }
             throw new AuthenticationError('You need to be logged in!');
         },
-        removeTrip: async (parent, {tripId }, context) => {
+        removeHotel: async (parent, {hotelId }, context) => {
             if (context.user) {
                 const updatedUser = await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $pull: { savedTrips: { tripId }}},
+                    { $pull: { savedHotels: { hotelId }}},
                     { new: true }
                 );
                 return updatedUser;
