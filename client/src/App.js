@@ -7,8 +7,8 @@ import Footer from './components/Footer';
 
 //pages
 import Home from './pages/Home';
-import Search from './pages/Search';
-import Saved from './pages/Saved';
+import Search from './pages/Search/index';
+import Saved from './pages/Saved/index';
 import Contact from './pages/Contact';
 import Nav from './components/Nav/index';
 
