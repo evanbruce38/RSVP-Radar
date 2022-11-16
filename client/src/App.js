@@ -6,68 +6,50 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 //pages
-import Home from './pages/Home/Home';
+import Home from './pages/Home';
 import Search from './pages/Search';
 import Saved from './pages/Saved';
 import Contact from './pages/Contact';
+import Nav from './components/Nav/index';
+
+// Apollo
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
 
 
 function App() {
-
-  const [menu] = useState(['Home', 'Search', 'Saved', 'Contact']);
-  const [currentPage, setCurrentPage] = useState(menu[0])
-
   return (
-    <div>
-      <div>
-        <Header
-          menu={menu}
-          currentTitle={currentPage}
-          setCurrentTitle={setCurrentPage}
-          ></Header>
-      </div>
-      {currentPage === 'Home' ? (
+    <ApolloProvider client={client}>
+      <Router>
         <>
-          <section className="hero">
-            <div>
-              <h2>RSVP Radar</h2>
-            </div>
-          </section>
+          <Nav />
+            <Switch>
+              <Route exact path='/' component={Search} />
+              <Route exact path='/saved' component={Saved} />
+              <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
+            </Switch>
         </>
-      ):''}
-      {currentPage !== 'Home' ? (
-        <>
-          <section className="hero hero-mini">
-          </section>
-        </>
-      ):''}
-      <section className="main-section">
-        {currentPage === 'Home' ? (
-          <>
-            <Home></Home>
-          </>
-        ):''}
-        {currentPage === 'Search' ? (
-          <>
-            <Search></Search>
-          </>
-        ):''}
-        {currentPage === 'Saved' ? (
-          <>
-            <Saved></Saved>
-          </>
-        ):''}
-        {currentPage === 'Contact' ? (
-          <>
-            <Contact></Contact>
-          </>
-        ):''}
-      </section>
-      <>
-        <Footer></Footer>
-      </>
-    </div>
-
+      </Router>
+    </ApolloProvider>
   );
 }
 
