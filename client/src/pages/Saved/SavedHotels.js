@@ -44,7 +44,7 @@ const SavedHotels = () => {
       <Container>
         <h2>
           {userData.savedHotels.length
-            ? `Viewing ${userData.savedHotels.length} saved ${userData.savedHotelss.length === 1 ? 'hotel' : 'hotels'}:`
+            ? `Viewing ${userData.savedHotels.length} saved ${userData.savedHotels.length === 1 ? 'hotel' : 'hotels'}:`
             : 'You have no saved hotels!'}
         </h2>
         <CardColumns>
@@ -53,8 +53,8 @@ const SavedHotels = () => {
               <Card key={hotel.hotelId} border='dark'>
                 {hotel.image ? <Card.Img src={hotel.image} alt={`The cover for ${hotel.title}`} variant='top' /> : null}
                 <Card.Body>
-                  <Card.Title>{hotel.title}</Card.Title>
-                  <p className='small'>Authors: {hotel.authors}</p>
+                  <Card.Title>{hotel.Name}</Card.Title>
+                  <p className='small'>City: {hotel.city}</p>
                   <Card.Text>{hotel.description}</Card.Text>
                   <Button className='btn-block btn-danger' onClick={() => handleDeleteHotel(hotel.hotelId)}>
                     Delete this Hotle!
