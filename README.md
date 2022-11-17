@@ -4,18 +4,18 @@
 Our RSVP-Radar app allows users to search and save for hotels by entering a location.
 
 ## Technologies Used
-React
-Node.js
-MongoDB
-Express.js
-GraphQL
-Apollo
+React,
+Node.js,
+MongoDB,
+Express.js,
+GraphQL,
+Apollo,
 
 
 ## Meet the team
-Evan Bruce 
-Damien Bleus
-Claudy Regis
+Evan Bruce,
+Damien Bleus,
+Claudy Regis,
 John Robinson
 
 ## Heroku
