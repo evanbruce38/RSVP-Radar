@@ -1,4 +1,3 @@
-const { createPromptModule } = require('inquirer');
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
