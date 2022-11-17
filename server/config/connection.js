@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb+srv://ugabrucer30:Misha398?@cluster0.lfunwdz.mongodb.net/?retryWrites=true&w=majority',
+    process.env.MONGODB_URI || 'mongodb://localhost/travel',
     {
         useNewUrlParser: true,
         newUnifiedTopology: true,
+        useCreateIndex: true,
+        useFindAndModify: false
     },
 );
 
