@@ -37,7 +37,7 @@ function App() {
         <>
           <Navbar />
             <Switch>
-              <Route exact path='/search' component={SearchHotels} />
+              <Route exact path='/' component={SearchHotels} />
               <Route exact path='/saved' component={SavedHotels} />
               <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
             </Switch>

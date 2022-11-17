@@ -14,7 +14,7 @@ const AppNavBar = () => {
         <Navbar bg='dark' variant='dark' expand='lg'>
             <Container fluid>
                 <Navbar.Brand as={Link} to='/'>
-                    Hotel Search
+                    RSVP Radar
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls='navbar' />
                 <Navbar.Collapse id='navbar'>

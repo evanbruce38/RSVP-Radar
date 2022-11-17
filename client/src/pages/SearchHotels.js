@@ -83,7 +83,7 @@ const SearchHotels = () => {
       <>
         <Jumbotron fluid className='text-light bg-dark'>
           <Container>
-            <h1>Search for Hotels!</h1>
+            <h1>Find your dream Resort!</h1>
             <Form onSubmit={handleFormSubmit}>
               <Form.Row>
                 <Col xs={12} md={8}>
@@ -93,7 +93,7 @@ const SearchHotels = () => {
                     onChange={(e) => setSearchInput(e.target.value)}
                     type='text'
                     size='lg'
-                    placeholder='Search for a hotel'
+                    placeholder='Search by location'
                   />
                 </Col>
                 <Col xs={12} md={4}>
@@ -110,7 +110,7 @@ const SearchHotels = () => {
           <h2>
             {searchedHotels.length
               ? `Viewing ${searchedHotels.length} results:`
-              : 'Search for a hotel to begin'}
+              : 'Search to begin'}
           </h2>
           <CardColumns>
             {searchedHotels.map((hotel) => {
