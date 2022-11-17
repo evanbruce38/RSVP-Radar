@@ -22,9 +22,9 @@
   "homepage": "https://github.com/evanbruce38/travel-manager#readme",
   "dependencies": {
     "apollo-client": "^2.6.10",
-    "graphql": "^15.8.0"
+    "graphql": "^15.5.2"
   },
   "devDependencies": {
-    "concurrently": "^7.5.0"
+    "concurrently": "^5.1.0"
   }
 }

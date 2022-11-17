@@ -44,12 +44,13 @@ const SearchHotels = () => {
         const { items } = await response.json();
   
         //needs to be looked at again
-        const HotelData = items.map((hotel) => ({
+        const hotelData = items.map((hotel) => ({
           hotelId: hotel.id,
           hotelName: hotel.hotelInfo.name || ['No author to display'],
           hotelBrand: hotel.hotelInfo.brand,
           cityName: hotel.hotelInfo.city,
-          starRating: hotel.hotelInfo.imageLinks?.thumbnail || '',
+          thumbnailUrl: hotel.hotelInfo.imageLinks?.thumbnail,
+          starRating: hotel.hotelInfo.starRating || '',
         }));
   
         setSearchedHotels(HotelData);
@@ -120,7 +121,7 @@ const SearchHotels = () => {
                   ) : null}
                   <Card.Body>
                     <Card.Title>{hotel.title}</Card.Title>
-                    <p className='small'>Authors: {hotel.authors}</p>
+                    <p className='small'>Hotel Name: {hotel.hotelName}</p>
                     <Card.Text>{hotel.description}</Card.Text>
                     {Auth.loggedIn() && (
                       <Button

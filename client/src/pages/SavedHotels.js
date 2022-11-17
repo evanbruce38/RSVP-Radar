@@ -53,7 +53,7 @@ const SavedHotels = () => {
               <Card key={hotel.hotelId} border='dark'>
                 {hotel.image ? <Card.Img src={hotel.image} alt={`The cover for ${hotel.title}`} variant='top' /> : null}
                 <Card.Body>
-                  <Card.Title>{hotel.Name}</Card.Title>
+                  <Card.Title>{hotel.hotelName}</Card.Title>
                   <p className='small'>City: {hotel.city}</p>
                   <Card.Text>{hotel.description}</Card.Text>
                   <Button className='btn-block btn-danger' onClick={() => handleDeleteHotel(hotel.hotelId)}>

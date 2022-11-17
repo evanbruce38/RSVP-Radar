@@ -1,18 +1,5 @@
-import React, {useState } from 'react';
-import './App.css';
-
-// components
-import Header from './components/Header';
-import Footer from './components/Footer';
-
-//pages
-import Home from './pages/Home';
-import Search from './pages/Search/index';
-import Saved from './pages/Saved/index';
-import Contact from './pages/Contact';
-import Nav from './components/Nav/index';
-
-// Apollo
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import {
   ApolloClient,
   InMemoryCache,
@@ -20,6 +7,9 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import SearchHotels from './pages/SearchHotels';
+import SavedHotels from './pages/SavedHotels';
+import Navbar from './components/navbar';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -35,16 +25,20 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
         <>
-          <Nav />
+          <Navbar />
             <Switch>
-              <Route exact path='/' component={Search} />
-              <Route exact path='/saved' component={Saved} />
+              <Route exact path='/search' component={SearchHotels} />
+              <Route exact path='/saved' component={SavedHotels} />
               <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
             </Switch>
         </>
