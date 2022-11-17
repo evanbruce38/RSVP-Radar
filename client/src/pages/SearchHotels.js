@@ -53,7 +53,7 @@ const SearchHotels = () => {
           starRating: hotel.hotelInfo.starRating || '',
         }));
   
-        setSearchedHotels(HotelData);
+        setSearchedHotels(hotelData);
         setSearchInput('');
       } catch (err) {
         console.error(err);

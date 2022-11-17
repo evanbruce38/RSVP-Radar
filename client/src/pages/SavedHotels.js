@@ -21,10 +21,10 @@ const SavedHotels = () => {
 
     try {
       const { data } = await removeHotel({
-        variables: { HotelId },
+        variables: { hotelId },
       });
 
-      removeHotelId(HotelId);
+      removeHotelId(hotelId);
     } catch (err) {
       console.error(err);
     }

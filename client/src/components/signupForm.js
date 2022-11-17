@@ -26,7 +26,7 @@ const SignUpForm = () => {
     }, [error]);
 
     const handleInputChange = (event) => {
-        const { name, values } = event.target;
+        const { name, value } = event.target;
 
         setUserFormData({
             ...userFormData,
@@ -68,7 +68,7 @@ const SignUpForm = () => {
                 </Alert>
 
                 <Form.Group>
-                    <Form.Label htmlForm='username'>Username</Form.Label>
+                    <Form.Label htmlform='username'>Username</Form.Label>
                     <Form.Control
                         type='text'
                         placeholder='Your username'
@@ -95,7 +95,7 @@ const SignUpForm = () => {
 
                 <Form.Group>
                     <Form.Label htmlFor='password'>Password</Form.Label>
-                    <form.Control
+                    <Form.Control
                         type='password'
                         placeholder='Your password'
                         name='password'

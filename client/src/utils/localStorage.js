@@ -7,23 +7,23 @@ export const getSavedHotelIds = () => {
   };
   
   export const saveHotelIds = (hotelsIdArr) => {
-    if (hotelIdArr.length) {
+    if (hotelsIdArr.length) {
       localStorage.setItem('saved_hotels', JSON.stringify(hotelsIdArr));
     } else {
       localStorage.removeItem('saved_hotels');
     }
   };
   
-  export const removeHotelId = (hotelsId) => {
-    const savedHotelsIds = localStorage.getItem('saved_hotels')
+  export const removeHotelId = (hotelId) => {
+    const savedHotelIds = localStorage.getItem('saved_hotels')
       ? JSON.parse(localStorage.getItem('saved_hotels'))
       : null;
   
     if (!savedHotelIds) {
       return false;
-    }
+    };
   
-    const updatedSavedHotelIds = savedHotelIds?.filter((savedHotelId) => savedHotelId !== HotelId);
+    const updatedSavedHotelIds = savedHotelIds?.filter((savedHotelId) => savedHotelId !== hotelId);
     localStorage.setItem('saved_hotels', JSON.stringify(updatedSavedHotelIds));
   
     return true;

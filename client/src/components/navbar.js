@@ -11,18 +11,18 @@ const AppNavBar = () => {
 
     return (
         <>
-        <NavBar bg='dark' variant='dark' expand='lg'>
+        <Navbar bg='dark' variant='dark' expand='lg'>
             <Container fluid>
                 <Navbar.Brand as={Link} to='/'>
                     Hotel Search
                 </Navbar.Brand>
-                <Navbar.toggle aria-controls='navbar' />
+                <Navbar.Toggle aria-controls='navbar' />
                 <Navbar.Collapse id='navbar'>
                     <Nav className='ml-auto'>
                         <Nav.Link as={Link} to='/'>
                             Search for Hotels
                         </Nav.Link>
-                        {Auth.logegdIn() ? (
+                        {Auth.loggedIn() ? (
                             <>
                                 <Nav.Link as={Link} to='/saved'>
                                     See your Hotels
@@ -35,7 +35,7 @@ const AppNavBar = () => {
                     </Nav>
                 </Navbar.Collapse>
             </Container>
-        </NavBar>
+        </Navbar>
         <Modal
             size='lg'
             show={showModal}
