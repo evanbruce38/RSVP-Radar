@@ -22,7 +22,7 @@ p {
 }
 
 header {
-  background-color: var(--first-color);
+  background-color: var(--second-color);
   display: flex;
   justify-content: space-between;
 }

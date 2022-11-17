@@ -11,7 +11,7 @@ const AppNavBar = () => {
 
     return (
         <>
-        <Navbar bg='dark' variant='dark' expand='lg'>
+        <Navbar bg='secondary' variant='dark' expand='lg'>
             <Container fluid>
                 <Navbar.Brand as={Link} to='/'>
                     RSVP Radar
