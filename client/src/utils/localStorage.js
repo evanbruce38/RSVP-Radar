@@ -1,9 +1,9 @@
-export const getSavedBookIds = () => {
-    const savedBookIds = localStorage.getItem('saved_hotels')
+export const getSavedHotelIds = () => {
+    const savedHotelIds = localStorage.getItem('saved_hotels')
       ? JSON.parse(localStorage.getItem('saved_hotels'))
       : [];
   
-    return savedBookIds;
+    return savedHotelIds;
   };
   
   export const saveHotelIds = (hotelsIdArr) => {
